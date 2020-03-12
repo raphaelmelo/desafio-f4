@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <title>Future4</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">  
+    <style>
+
+/*Reset CSS*/
+    html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, abbr, acronym, address, big, cite, code,del, dfn, em, img, ins, kbd, q, s, samp,small, strike, strong, sub, sup, tt, var, b, u, i, center,dl, dt, dd, ol, ul, li,fieldset, form, label, legend,table, caption, tbody, tfoot, thead, tr, th, td,article, aside, canvas, details, embed, 
+    figure, figcaption, footer, header, hgroup, menu, nav, output, ruby, section, summary,time, mark, audio, video {
+        margin: 0;
+        padding: 0;
+        border: 0;
+        font-size: 100%;
+    
+    }
+/*Reset CSS*/
+/*BODY AND CONTAINER*/
+
+    body {
+        background-color: #585E95;
+        width: 100%;
+        height: auto;
+        font-size: 18px;
+        font-family: Arial, Helvetica, sans-serif;
+        color: #fff;
+
+    }
+
+    #mainSection {
+        height: 100%;
+    }
+/*BODY AND CONTAINER*/
+/*HEADER*/
+
+    header {
+        width: 100%;
+        height: auto;
+        background-color: #CD4C00;
+        margin: 0;
+    }
+    .navList {
+        display:flex;
+        justify-content: center;
+        align-items: center;
+        margin: 0;
+
+    }
+    .navListItem{
+        padding: 14px;
+        text-decoration: none;
+        font-weight: bold;
+        text-transform: uppercase;
+        color: #fff;
+
+    }
+
+/*HEADER*/
+/*MAIN*/
+
+    main {
+        width: 100%;
+        height: 85vh;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        text-align: center;
+        flex-wrap: wrap;
+    }
+    main h1 {
+        justify-content: center;
+        font-size: 22px;
+        width: 100%;
+
+    }
+
+    main img {
+        width: 300px;
+        
+    }
+
+    .pFutere4 {
+        width: 100%;
+        
+    }
+    .pFutere4 p {
+        display: flex;
+        justify-content: flex-end;
+        padding-right: 30px;
+    }
+
+/*MAIN*/
+/*FOOTER*/
+
+    footer {
+        background-color: #D5D5D5;
+        width: 100%;
+        height: 20vh;
+    
+    }
+    .mail {
+        display: flex;
+        justify-content: center;
+        align-self: start;
+        align-items: center;
+
+        height: 20vh;
+
+    }
+    .mailInput { 
+        padding: 14px;
+        border-style: none;
+        width: 30vh;
+        height: 22px;
+    }
+    .button {
+        padding: 14px;
+        width: 10vh;
+        min-width: 80px;
+        background-color: #CD4C00;
+        color: #fff;
+        text-transform: uppercase;
+        font-weight: 550;
+        font-size: 16px;
+        border-style: none;
+
+    }
+/*FOOTER*/
+
+@media only screen and (min-width: 600px) {
+
+    .navList {
+        display:flex;
+        justify-content: flex-end;
+        align-items: center;
+        margin: 0;
+        padding-right: 5px;
+
+    }
+    main h1 {
+          font-size: 24px;
+          padding-top: 80px;
+        }
+    
+    main img {
+        width: 40%;
+        
+    }
+
+    .mailInput { 
+        width: 50vh;
+    }
+    .button {
+        width: 12vh;
+    }
+
+    }
+
+
+</style>
+</head> 
+<body>
+    <section id="mainSection">  
+            <header>
+                    <nav>
+                    <ul class="navList">
+                        <a class="navListItem" href="index.html">Home</a>
+                        <a class="navListItem" href="cursos.html">Cursos</a>
+                        <a class="navListItem" href="contato.html">Contato</a>
+                    </ul>
+                </nav>
+            </header>
+
+            <main id="mainContainer">
+                        <h1>Processo Seletivo Future4</h1>
+                    <div class="imgFutere4">
+                        <img src="future4.jpg " alt="Future4">
+                    </div>
+                    <div class="pFutere4">      
+                        <p>Turma Web Full Stack</p>
+                        </div>
+            </main>
+
+            <footer>
+                <div class="mail">
+                    <form id="mailForm" class="mailForm" name="form1" action="#"> 
+                        <input  id="mailInput" class="mailInput" type='text' name='text1' value="" placeholder="Coloque seu e-mail para contato!:)" required/>
+                        <input class="button" type="submit" name="submit" value="enviar" onclick="validateEmail(document.form1.text1)"/>
+                    </form>
+                </div>
+            </footer>
+    </section>
+
+
+<script> 
+        /* E-mail validator*/
+        function validateEmail(inputText){
+            var mailformat = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/; 
+            var userMail = document.getElementById("mailInput").value;
+            
+        if (inputText.value.match(mailformat)){
+            alert("O e-mail " + userMail + " foi cadastrado com sucesso!");
+            document.getElementById("mainContainer").innerHTML="Bem vind@ ao #Futuro, " + userMail + " !";
+            return true;  
+
+            }
+        
+
+        else {alert("Email inválido");
+            event.preventDefault();
+            document.form1.text1.focus();
+            return false;  
+            }
+        };
+
+        
+</script>
+</body>
+</HTML>
